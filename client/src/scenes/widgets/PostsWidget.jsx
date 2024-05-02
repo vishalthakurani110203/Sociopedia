@@ -9,11 +9,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
-    const response = await fetch("http://localhost:3001/posts", {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
-    });
+    const response = await fetch(`http://localhost:3001/posts`, {
+        method: "GET",
+        headers: { Authorization: `Bearer ${token}` },
+
+      });
     const data = await response.json();
+    console.log(data);
     dispatch(setPosts({ posts: data }));
   };
 
@@ -44,25 +46,27 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           _id,
           userId,
           firstName,
-          lastName,
+          // lastName,
+          // description,
+          body,
           description,
-          location,
-          picturePath,
+          // location,
+          // picturePath,
           userPicturePath,
-          likes,
-          comments,
+          // likes,
+          // comments,
         }) => (
           <PostWidget
             key={_id}
             postId={_id}
             postUserId={userId}
-            name={`${firstName} ${lastName}`}
-            description={description}
-            location={location}
-            picturePath={picturePath}
-            userPicturePath={userPicturePath}
-            likes={likes}
-            comments={comments}
+            // name={`${firstName} ${lastName}`}
+            description={body ? body : description}
+            // location={location}
+            // picturePath={picturePath}
+            userPicturePath={userPicturePath ? userPicturePath : null}
+            // likes={likes}
+            // comments={comments}
           />
         )
       )}

@@ -121,7 +121,7 @@ import {
         <Divider sx={{ margin: "1.25rem 0" }} />
   
         <FlexBetween>
-          <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
+          {/* <FlexBetween gap="0.25rem" onClick={() => setIsImage(!isImage)}>
             <ImageOutlined sx={{ color: mediumMain }} />
             <Typography
               color={mediumMain}
@@ -129,9 +129,9 @@ import {
             >
               Image
             </Typography>
-          </FlexBetween>
+          </FlexBetween> */}
   
-          {isNonMobileScreens ? (
+          {/* {isNonMobileScreens ? (
             <>
               <FlexBetween gap="0.25rem">
                 <GifBoxOutlined sx={{ color: mediumMain }} />
@@ -152,7 +152,7 @@ import {
             <FlexBetween gap="0.25rem">
               <MoreHorizOutlined sx={{ color: mediumMain }} />
             </FlexBetween>
-          )}
+          )} */}
   
           <Button
             disabled={!post}
