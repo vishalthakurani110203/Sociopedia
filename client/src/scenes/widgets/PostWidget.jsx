@@ -15,13 +15,14 @@ import { setPost } from "state";
 const PostWidget = ({
   postId,
   postUserId,
-//   name,
+  name,
   description,
 //   location,
 //   picturePath,
   userPicturePath,
 //   likes,
 //   comments,
+username
 }) => {
   const [isComments, setIsComments] = useState(false);
   const dispatch = useDispatch();
@@ -51,10 +52,11 @@ const PostWidget = ({
     <WidgetWrapper m="2rem 0">
       <Friend
         friendId={postUserId}
-        // name={name}
+        name={name}
         // subtitle={location}
         userPicturePath={userPicturePath}
       />
+      {/* <p>{postUserId}<span>{username}</span> </p> */}
       <Typography color={main} sx={{ mt: "1rem" }}>
         {description}
       </Typography>

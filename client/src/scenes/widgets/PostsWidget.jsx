@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           _id,
           userId,
           firstName,
-          // lastName,
+          lastName,
           // description,
           body,
           description,
@@ -55,12 +56,14 @@ const PostsWidget = ({ userId, isProfile = false }) => {
           userPicturePath,
           // likes,
           // comments,
+          userName
         }) => (
           <PostWidget
             key={_id}
             postId={_id}
             postUserId={userId}
             // name={`${firstName} ${lastName}`}
+            name={userName ? userName : `${firstName} ${lastName}`}
             description={body ? body : description}
             // location={location}
             // picturePath={picturePath}
